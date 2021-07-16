@@ -1,0 +1,57 @@
+<!DOCTYPE html>   <!-- select tag by css selector  -->
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+        </title>
+    </head>
+    <body style="background-color: blanchedalmond; color: black;">
+
+        <input type = "button" value="dark-mode" onclick="alert('Dark mode clicked!'); 
+        document.querySelector('body').style.backgroundColor = 'rgb(49, 55, 138)'; 
+        document.querySelector('body').style.color = '#ccdd9d';
+        ">
+
+        <input type = "button" value="light-mode" onclick="alert('Light mode clicked!'); 
+        document.querySelector('body').style.backgroundColor = 'blanchedalmond'; 
+        document.querySelector('body').style.color = 'rgb(49, 55, 138)';
+        ">
+  
+        <input id = "dark-light" type = "button" value="change the mode" onclick="alert('theme button clicked!'); 
+        if((document.querySelector('#dark-light').value.includes('dark')) || (document.querySelector('#dark-light').value.includes('change'))){
+            document.querySelector('body').style.backgroundColor = 'rgb(49, 55, 138)'; 
+            document.querySelector('body').style.color = '#ccdd9d';
+            document.querySelector('#dark-light').value = 'back to the light-mode';
+        }else {
+            document.querySelector('body').style.backgroundColor = 'blanchedalmond'; 
+            document.querySelector('body').style.color = 'rgb(49, 55, 138)';
+            document.querySelector('#dark-light').value = 'back to the dark-mode';
+        }
+        ">
+
+        <ol> 
+            <li> <a href = "https://www.naver.com/">NAVER </a></li>
+            <li> <a href = "https://www.google.com/">GOOGLE </a></li>
+            <li> <a href = "https://www.neo4j.com/">NEO4J </a></li>
+        </ol>
+        <!-- document.write('<a href="https://www.google.com/">https://www.google.com/</a>') -->
+
+        <p>
+            <div id = "first">What is <span class = 'js'>neo4j</span> ?  GRAPH DATA PLATFORM</div> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 된다.  -->
+            <span class = 'js'><span class = 'js'>neo4j</span> GRAPH DATA PLATFORM</span> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 되지 않는다. -->
+            "The Fastest Path to Graph
+            <span class = 'js'>neo4j</span> gives <span>developers</span> and  <span>data scientists </span>the most trusted and advanced tools to quickly build 
+            today’s intelligent applications and machine learning workflows. Available as a fully managed cloud service or self-hosted."
+        </p>>
+
+    </body>
+</html>
+
+<!-- 
+    toggle 기능 버튼을 만들어서 
+    (하나의 버튼으로) 클릭할 때마다 밝/어둡 게 되는 버튼을 만들어보자. 
+
+    ++ 추가 한 것
+    button의 value를 각 모드와 반대되도록 지정 (light mode 일 때는 "back to the dark mode") 
+    초기 button value = "change the mode" 로 주고, 클릭할때마다 back to the dark mode / back to the light mode 로 바뀌게 함.
+-->
