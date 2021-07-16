@@ -2,12 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <style>   /* "style태그에 감싸져 있는 것이 css임" */
+        <style>   /* "style태그에 감싸져 있는 것이 css임" class 일 때는 . */
             .js{    /**/
                 font-weight: bold;
                 color: blueviolet;
             }
-
+            #first{   /*첫번째 등장하는 단어에만 강조하고 싶을 때 ! id일 때는 # */ 
+                color: green;
+            }
+            span{   /* 이 페이지 내의 모든 span 태그를 지칭 */
+                color: hotpink;
+            }
         </style>
         <title>
         </title>
@@ -21,10 +26,10 @@
         </ol>
 
         <p>
-            <div>What is <span class = 'js'>neo4j</span> ?  GRAPH DATA PLATFORM</div> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 된다.  -->
+            <div id = "first">What is <span class = 'js'>neo4j</span> ?  GRAPH DATA PLATFORM</div> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 된다.  -->
             <span class = 'js'><span class = 'js'>neo4j</span> GRAPH DATA PLATFORM</span> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 되지 않는다. -->
             "The Fastest Path to Graph
-            <span class = 'js'>neo4j</span> gives developers and data scientists the most trusted and advanced tools to quickly build 
+            <span class = 'js'>neo4j</span> gives <span>developers</span> and  <span>data scientists </span>the most trusted and advanced tools to quickly build 
             today’s intelligent applications and machine learning workflows. Available as a fully managed cloud service or self-hosted."
         </p>>
         <!-- document.write('<a href="https://www.google.com/">https://www.google.com/</a>') -->
@@ -33,3 +38,8 @@
 
 <!-- <span>이나 <div>를 모든 단어에 적용하고 싶을 경우 
 find → replace all 을 활용해보거나 find, alt+enter로 클래스를 주고, css로 한번에 할 수 있다. -->
+
+<!-- id, class로 두가지 css 영향을 받을 경우에는 어떻게 될까용 ? 
+class는 그룹의 느낌, id는 고유한 무엇.. 식별하는 느낌.. 
+고로 class가 포괄적(광역), id는 타겟팅하는 느낌(예외처리).
+-->
