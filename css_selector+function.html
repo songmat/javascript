@@ -1,0 +1,75 @@
+<!DOCTYPE html>   <!-- select tag by css selector  -->
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+        </title>
+    </head>
+    <script>
+
+        function LinksSetColor(color){   // a 태그의 색상을 바꾸어주는 함수
+            var links = document.querySelectorAll('a');
+            var i = 0; 
+            while(i < links.length){
+                console.log(links[i]);
+                links[i].style.color = color;
+                i = i + 1;
+            }  
+        }
+
+        function BodySetColor(color){
+            document.querySelector('body').style.color = color;
+        }
+
+        function BodySetBackgroundColor(color){
+            document.querySelector('body').style.backgroundColor = color;
+        }
+
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if((self.value.includes('dark')) || (self.value.includes('change'))){
+                BodySetBackgroundColor('rgb(49, 55, 138)');
+                BodySetColor('green');
+                self.value = 'back to the light-mode';
+                LinksSetColor('powderblue');
+                
+            }else {
+                BodySetBackgroundColor('blanchedalmond');
+                BodySetColor('pink');
+                self.value = 'back to the dark-mode';
+                LinksSetColor('black');
+            }
+        }
+    </script>
+
+    <body style="background-color: blanchedalmond; color: black;">             
+        <h1 style="color: black;">javascript world</h1>
+        <!-- 조건문 ▼ -->
+
+        <input id = "dark-light" type = "button" value="change the mode11" onclick="alert('theme button clicked!'); 
+            nightDayHandler(this);
+        ">
+        
+
+        <p>
+            <div id = "first">What is <span class = 'js'>neo4j</span> ?  GRAPH DATA PLATFORM</div> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 된다.  -->
+            <span class = 'js'><span class = 'js'>neo4j</span> GRAPH DATA PLATFORM</span> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 되지 않는다. -->
+            "The Fastest Path to Graph
+            <span class = 'js'>neo4j</span> gives <span>developers</span> and  <span>data scientists </span>the most trusted and advanced tools to quickly build 
+            today’s intelligent applications and machine learning workflows. Available as a fully managed cloud service or self-hosted."
+        </p>
+
+        <ol> 
+            <li><a href = "https://www.naver.com/" >NAVER</a></li>
+            <li><a href = "https://www.google.com/" >GOOGLE</a></li>
+            <li><a href = "https://www.neo4j.com/" >NEO4J</a></li>
+        </ol>
+
+    </body>
+</html>
+
+<!--
+추가된 것 
+각 기능들을 함수로 묶는다.
+이후에는 객체를 만들 것.
+--->
