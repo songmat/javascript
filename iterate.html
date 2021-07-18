@@ -25,16 +25,28 @@
 
         document.write("data scientist : "+coworkers["data scientist"] + "<br>");
     </script>
-        <h2>iterate</h2>
+    <h2>iterate</h2>
     <script>
         for(var key in coworkers){
             document.write(key+'<br>');   // coworkers[key] 로 하게되면, egoing, leezche ... 로 출력됨
-            document.write(key+ ' : ' + coworkers[key]+'<br>');    // create 하고 출력했던 것과 같은 형태로 출력되는 것을 확인할 수 있다. 
+            document.write(key+ ' : ' + coworkers[key]+'<br>');
 
         }
-
     </script>
-    
-
+    <h2>propoerty and method</h2>   <!-- 객체에 function 추가하기  -->
+    <script>    
+        coworkers.showAll = function(){
+            for(var key in this){      
+                if (key == 'showAll'){break;}     
+                document.write(key+ ' : ' + coworkers[key]+'<br>');
+            }
+        }
+        coworkers.showAll();
+    </script>
     </body>
 </html>
+
+<!--
+++ 객체의 property에 함수를 추가할 수 있다. 
+key로 iterate할 때에 함수명인 경우 break 등의 조치를 취함으로써 함수의 출력을 피할 수 있다. 
+-->
