@@ -1,0 +1,78 @@
+<!DOCTYPE html>   <!-- select tag by css selector  -->
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+        </title>
+    </head>
+    <script>
+        
+        var Links = {
+            setColor:function(color){
+                var alist = document.querySelectorAll('a');
+                var i = 0; 
+                while(i < alist.length){
+                    console.log(alist[i]);
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }  
+            }
+        }
+       
+
+        var Body = {
+            setColor:function(color){
+                document.querySelector('body').style.color = color;
+            },
+            SetBackgroundColor:function(color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+
+
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if((self.value.includes('dark')) || (self.value.includes('change'))){
+                Body.SetBackgroundColor('rgb(49, 55, 138)');
+                Body.setColor('green');
+                self.value = 'back to the light-mode';
+                Links.setColor('powderblue');
+                
+            }else {
+                Body.SetBackgroundColor('blanchedalmond');
+                Body.setColor('pink');
+                self.value = 'back to the dark-mode';
+                Links.setColor('black');
+            }
+        }
+    </script>
+
+    <body style="background-color: blanchedalmond; color: black;">             
+        <h1 style="color: black;">javascript world</h1>
+        <!-- 조건문 ▼ -->
+
+        <input id = "dark-light" type = "button" value="change the mode11" onclick="alert('theme button clicked!'); 
+            nightDayHandler(this);
+        ">
+        
+
+        <p>
+            <div id = "first">What is <span class = 'js'>neo4j</span> ?  GRAPH DATA PLATFORM</div> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 된다.  -->
+            <span class = 'js'><span class = 'js'>neo4j</span> GRAPH DATA PLATFORM</span> <!-- 어떠한 의미도 없는.. 태그, 줄바꿈이 되지 않는다. -->
+            "The Fastest Path to Graph
+            <span class = 'js'>neo4j</span> gives <span>developers</span> and  <span>data scientists </span>the most trusted and advanced tools to quickly build 
+            today’s intelligent applications and machine learning workflows. Available as a fully managed cloud service or self-hosted."
+        </p>
+
+        <ol> 
+            <li><a href = "https://www.naver.com/" >NAVER</a></li>
+            <li><a href = "https://www.google.com/" >GOOGLE</a></li>
+            <li><a href = "https://www.neo4j.com/" >NEO4J</a></li>
+        </ol>
+
+    </body>
+</html>
+
+<!--
+Body, Links 를 객체화 하여 함수를 추가하였음
+-->
